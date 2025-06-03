@@ -1,0 +1,67 @@
+.navbar{
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo{
+    width: 150px;
+}
+.navbar .nav-menu{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    color: #49557e;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar .nav-menu .active{
+    color: #49557e;
+    border-bottom: 2px solid #49557e;
+}
+.navbar .nav-menu .nav-item{
+    cursor: pointer;
+    
+}
+
+.navbar .navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+} 
+.navbar .search-bar{
+    display: flex;
+    align-items: center;
+    border: 2px solid #49557e;
+    padding: 5px;
+}
+.navbar .search-bar input{
+    outline: none;
+    border: none;
+}
+.navbar .search-bar img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.navbar .basket-icon img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.navbar .login-button{
+    background-color: #49557e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+    border: 2px solid #49557e;
+    border-radius: 30px;
+}
+.navbar .login-button:hover{
+    background-color: #49557e;
+}

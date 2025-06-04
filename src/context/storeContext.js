@@ -1,16 +1,2 @@
-import { createContext } from "react";
-
-export const StoreContext = createContext(null)
-
-const StoreContextProvider = (props) => {
-
-    const contextValue = {
-         
-    }
-    return(
-        <StoreContext.Provider value={contextValue}>
-            {props.children}
-        </StoreContext.Provider>
-    )
-            
-}
+const appUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+export default appUrl;

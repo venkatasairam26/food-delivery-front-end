@@ -10,6 +10,7 @@ import PlaceOrder from './components/placeOrder'
 import Login from './login/index'
 import ProtuctedRoute from './protuctedRoute'
 import Register from './Register'
+import Profile from './components/Profile'
 
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <ProtuctedRoute exact path='/' component={Home } />
-        <Route exact path='/cart' component={Cart } />
+        <ProtuctedRoute exact path='/cart' component={Cart} />
+        <ProtuctedRoute exact path='/profile' component = {Profile} />
         <Route exact path='/place-order' component={PlaceOrder } />
       </Switch> 
     </div>

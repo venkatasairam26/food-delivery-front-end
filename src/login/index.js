@@ -1,6 +1,7 @@
 import './index.css';
 import { useState } from 'react';
 import Cookies from 'js-cookie';
+import appUrl from '../context/storeContext';
 
 
 const Login = (props) => {
@@ -16,7 +17,7 @@ const Login = (props) => {
     const onSubmitForm = async (event) => {
         event.preventDefault();
 
-        const url = 'https://food-delivery-backend-rv87.onrender.com/login';
+        const url = `${appUrl}/login`;
          try {
             const response = await fetch(url, {
                 method: "POST",

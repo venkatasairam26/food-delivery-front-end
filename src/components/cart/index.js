@@ -27,7 +27,10 @@ const Cart = () => {
       data: [],
       errorMsg: null
     })
-    const getCartItems = async () => {
+    getCartItems()
+  }, [])
+
+  const getCartItems = async () => {
 
       const apiUrl = `${appUrl}/cart`
       const options = {
@@ -49,8 +52,6 @@ const Cart = () => {
         console.error('Failed to fetch cart items:', data.error)
       }
     }
-    getCartItems()
-  }, [])
 
   const onDeleteCartItem = async (cartId) => {
     setCartItemsData({
@@ -65,16 +66,11 @@ const Cart = () => {
       },
     }
     const response = await fetch(apiUrl, options)
-    const data = await response.json()
+    getCartItems()
     if (response.ok) {
-      setCartItemsData({
-        data: cartItemsData.data.filter(item => item.cartId !== cartId),
-        apiStatus: apiStatusContext.success,
-        errorMsg: null
-      })
       console.log('Item removed from cart successfully')
     } else {
-      console.error('Failed to remove item from cart:', data.error)
+      console.error('Failed to remove item from cart:')
     }
   }
 
@@ -83,6 +79,7 @@ const Cart = () => {
   
 
   const { data: cartItems, apiStatus } = cartItemsData
+ 
 
 
 
@@ -90,7 +87,7 @@ const Cart = () => {
     switch (apiStatus) {
       case apiStatusContext.success:
         return (
-          <ul className='cart-items-list'>
+          cartItems.length > 0 ? (<ul className='cart-items-list'>
             {cartItems.map(item => (
               <CartItems
                 key={item.cartId}
@@ -98,7 +95,11 @@ const Cart = () => {
                 onDeleteCartItem={onDeleteCartItem}
               />
             ))}
-          </ul>
+          </ul>): (
+            <div className='empty-cart-view'>
+              <h1 className='empty-cart-message'>Your cart is empty</h1>
+            </div>
+          )
         )
       case apiStatusContext.failure:
         return <div className='error-view'><h1 className='error-message'>Something went wrong. Please try again later.</h1></div>
@@ -112,7 +113,7 @@ const Cart = () => {
 
   return (
     <div>
-      <h1>Cart</h1>
+      <h1 className='cart-text'>Cart</h1>
       {renderContent()}
     </div>
   )

@@ -1,2 +1,2 @@
-const appUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+const appUrl = 'https://food-delivery-backend-rv87.onrender.com'
 export default appUrl;

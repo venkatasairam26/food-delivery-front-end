@@ -1,3 +1,6 @@
 .cart-items-list{
     list-style: none;
 }
+.cart-text{
+    margin: 0 0 20px;
+}

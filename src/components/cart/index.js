@@ -18,8 +18,7 @@ const Cart = () => {
     data: [],
     errorMsg: null
   })
-  const [totalPrice, setTotalPrice] = useState(0)
-  const [totalItems, setTotalItems] = useState(0)
+  
 
   useEffect(() => {
     setCartItemsData({

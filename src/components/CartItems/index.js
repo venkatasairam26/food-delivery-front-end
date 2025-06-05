@@ -3,7 +3,7 @@ import './index.css';
 const CartItems = (props) => {
     const { cartItems,onDeleteCartItem} = props;
     console.log(cartItems);
-    const { cartId,productId, imgUrl, name, price, quantity } = cartItems;
+    const { cartId, imgUrl, name, price, quantity } = cartItems;
 
     const onRemoveFromCart = () =>{
         onDeleteCartItem(cartId);

@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from 'react'
+import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import './index.css'
 import appUrl from '../../context/storeContext'

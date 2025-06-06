@@ -1,6 +1,7 @@
 import {  useState } from 'react';
 import { useHistory }  from 'react-router-dom';
 import './index.css'
+import appUrl from '../context/storeContext';
 
 
 const Register = () => {
@@ -18,7 +19,7 @@ const Register = () => {
     const onClickSubmit = async (event) => {
         event.preventDefault();
 
-        const url = 'https://food-delivery-backend-rv87.onrender.com/register';
+        const url = `${appUrl}/register`;
         const response = await fetch(url, {
             method: "POST",
             headers: {

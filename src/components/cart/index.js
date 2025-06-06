@@ -29,13 +29,13 @@ const Cart = () => {
     getCartItems()
   }, [])
 
-  const getCartItems = async () => {
+      const getCartItems = async () => {
 
       const apiUrl = `${appUrl}/cart`
       const options = {
         method: 'GET',
         headers: {
-          Authorization: `Bearer ${jwtToken}`,
+          Authorization: `Bearer ${jwtToken}`,  
         },
       }
       const response = await fetch(apiUrl, options)
@@ -50,7 +50,7 @@ const Cart = () => {
       } else {
         console.error('Failed to fetch cart items:', data.error)
       }
-    }
+    }    
 
   const onDeleteCartItem = async (cartId) => {
     setCartItemsData({

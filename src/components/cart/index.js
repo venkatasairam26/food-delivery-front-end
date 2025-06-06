@@ -33,7 +33,7 @@ const Cart = () => {
 
       const apiUrl = `${appUrl}/cart`
       const options = {
-        method: 'GET',
+        method: 'post',
         headers: {
           Authorization: `Bearer ${jwtToken}`,  
         },

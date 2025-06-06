@@ -38,7 +38,7 @@ const Profile = () => {
         const jwtToken = Cookies.get('jwt_token');
         const apiUrl = appUrl + '/profile';
         const options = {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 Authorization: `Bearer ${jwtToken}`,
                 'Content-Type': 'application/json'

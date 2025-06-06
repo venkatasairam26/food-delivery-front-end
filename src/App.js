@@ -18,8 +18,8 @@ const App = () => {
     <div className='app'>
       <div className='container'>
       <Switch>
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path='/register' component={Register} />
+        <Route exact path='/login' component={Login} />
         <ProtuctedRoute exact path='/' component={Home } />
         <ProtuctedRoute exact path='/cart' component={Cart} />
         <ProtuctedRoute exact path='/profile' component = {Profile} />

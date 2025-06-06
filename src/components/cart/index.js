@@ -31,9 +31,9 @@ const Cart = () => {
 
       const getCartItems = async () => {
 
-      const apiUrl = `${appUrl}/cart`
+      const apiUrl = `${appUrl}/cartIems`
       const options = {
-        method: 'post',
+        method: 'POST',
         headers: {
           Authorization: `Bearer ${jwtToken}`,  
         },

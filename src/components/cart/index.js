@@ -77,23 +77,25 @@ const Cart = () => {
 
   
 
-  const { data: cartItems, apiStatus } = cartItemsData
- 
-
-
+  const { data,errorMsg, apiStatus } = cartItemsData
+   const totalPrice = data.reduce((acc, item) => acc + item.price * item.quantity, 0)
 
   const renderContent = () => {
     switch (apiStatus) {
       case apiStatusContext.success:
         return (
-          cartItems.length > 0 ? (<ul className='cart-items-list'>
-            {cartItems.map(item => (
+          data.length > 0 ? (<ul className='cart-items-list'>
+            {data.map(item => (
               <CartItems
                 key={item.cartId}
                 cartItems={item}
                 onDeleteCartItem={onDeleteCartItem}
               />
             ))}
+            <li className='total-price-item'>
+              <h2 className='total-price-text'>Total Price: ₹{totalPrice}</h2>  
+              <button className='checkout-button' onClick={() => alert('Checkout functionality not implemented yet.')}>Checkout</button>
+            </li>
           </ul>): (
             <div className='empty-cart-view'>
               <h1 className='empty-cart-message'>Your cart is empty</h1>

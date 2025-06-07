@@ -4,3 +4,17 @@
 .cart-text{
     margin: 0 0 20px;
 }
+.total-price-item{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;   
+}
+.checkout-button{
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
